@@ -9,6 +9,12 @@ namespace GitHubTestProject
     {
         static void Main(string[] args)
         {
+            int[] a = new int[] { 8, 2, 58, 34, 153, 4 };
+            Sort(a);
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine(a[i]);
+            }
             Console.WriteLine("Hello Github!");
             Console.WriteLine("Please complete the following functions and initate a pull request.");
         }
@@ -30,8 +36,18 @@ namespace GitHubTestProject
         /// <param name="a">An integer array</param>
         public static void Sort(int[] a)
         {
-            // TODO: Complete fhe funtion
+            int min;
+            for (int x = 0; x < a.Length; x++)
+            {
+                min = a[x];
+                for (int i = x+1; i < a.Length; i++)
+                {
+                    min = Math.Min(min, a[i]);
+                }
+                a[x] = min;
+            }
         }
+
 
         /// <summary>
         /// Counts the number of sequenes of the digits 0,1 with

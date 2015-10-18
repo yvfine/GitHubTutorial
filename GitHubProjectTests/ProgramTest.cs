@@ -28,8 +28,9 @@ namespace GitHubProjectTests
         public void TestSort()
         {
             int[] a = new int[] { 8, 2, 58, 34, 153, 4 };
+            int[] b = new int[] { 2, 4, 8, 34, 58, 153 };
             Program.Sort(a);
-            Assert.IsTrue(a.SequenceEqual(new int[] { 2, 4, 8, 34, 58, 153 }));
+            Assert.IsTrue(a.SequenceEqual(b));
         }
 
         [TestMethod]
