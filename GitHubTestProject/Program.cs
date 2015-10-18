@@ -26,8 +26,15 @@ namespace GitHubTestProject
         /// <returns></returns>
         public static bool IsPrime(int n)
         {
-            // TODO: Complete fhe funtion
-            return n % 2 != 0;
+            if ((n == 2) || (n == 3) || (n == 5) || (n == 7) || (n == 9))
+                return true;
+
+            if ((n % 2 != 0) && (n % 3 != 0) && (n % 5 != 0) &&
+                (n % 7 != 0) && (n % 9 != 0) && (n % 4 != 0) &&
+                (n % 6 != 0))
+                return true;
+
+            return false;
         }
 
         /// <summary>
@@ -36,16 +43,7 @@ namespace GitHubTestProject
         /// <param name="a">An integer array</param>
         public static void Sort(int[] a)
         {
-            int min;
-            for (int x = 0; x < a.Length; x++)
-            {
-                min = a[x];
-                for (int i = x+1; i < a.Length; i++)
-                {
-                    min = Math.Min(min, a[i]);
-                }
-                a[x] = min;
-            }
+            Array.Sort(a);
         }
 
 
@@ -65,7 +63,7 @@ namespace GitHubTestProject
                 return 4;
             if (a == 3)
                 return 7;
-            return 1000;
+            return CountVectors(a - 1) + CountVectors(a - 2) + CountVectors(a - 3);
         }
     }
 }
